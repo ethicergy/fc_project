@@ -42,3 +42,7 @@ textarea {
   text-align: center;
   transition: transform 0.2s;
 }
+
+#teamSize {
+  margin-bottom: 0px;
+}
