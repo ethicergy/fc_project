@@ -1,7 +1,7 @@
 let items = [];
 const parent = document.querySelector(".parent");
 const uploadFileInput = document.getElementById("upload_file");
-const groupCountInput = document.getElementById("groupCount");
+const teamSizeInput = document.getElementById("teamSize");
 
 document.getElementById("upload").addEventListener("change", handleFileSelect);
 
@@ -27,7 +27,8 @@ function updateItemsFromTextArea() {
 }
 
 function initializeGroups() {
-    const numGroups = parseInt(groupCountInput.value);
+    const numGroups = Math.floor(items.length/parseInt(teamSizeInput.value));
+    console.log(numGroups);
     if (numGroups < 1) return;
 
     parent.innerHTML = ""; 
@@ -93,9 +94,4 @@ function onDrop(event) {
     event.dataTransfer.clearData();
 }
 
-function resetApp() {
-    items = [];
-    parent.innerHTML = "";
-    uploadFileInput.value = "";
-    groupCountInput.value = 3;
-}
+
