@@ -1,2 +1,2 @@
 # fc_project
-<a href="ethicergy.github.io/fc_project">Link</a>
+[Hosted link here](a href="ethicergy.github.io/fc_project")
