@@ -13,6 +13,7 @@ function handleFileSelect(evt) {
     reader.onload = (e) => {
         uploadFileInput.value = e.target.result;
         items = e.target.result.split(/\s*,\s*|\n/).filter(line => line.trim() !== "");
+        displayNumberOfItems(items);
     };
     reader.onerror = () => {
         console.error("Error reading file");
@@ -24,14 +25,30 @@ uploadFileInput.addEventListener("input", updateItemsFromTextArea);
 
 function updateItemsFromTextArea() {
     items = uploadFileInput.value.split(/\s*,\s*|\n/).map(line => line.trim()).filter(line => line !== "");
+    displayNumberOfItems(items)
+}
+
+function displayNumberOfItems(items) {
+    const countdisplay = document.createElement("p");
+    countdisplay.textContent = `Number of Items: ${items.length}`
+    const maxSetter = document.getElementById("teamSize");
+    maxSetter.setAttribute('max', items.length)
+    document.getElementById("itemCount").innerHTML = '';
+    document.getElementById("itemCount").appendChild(countdisplay);
 }
 
 function initializeGroups() {
-    const numGroups = Math.floor(items.length/parseInt(teamSizeInput.value));
+    const numGroups = Math.ceil(items.length/parseInt(teamSizeInput.value));
     console.log(numGroups);
-    if (numGroups < 1) return;
-
     parent.innerHTML = ""; 
+    if (numGroups < 1)
+        {
+            const warning = document.createElement("p")
+            warning.textContent = "Teams cannot be created. Not enough members to meet team size"
+            parent.appendChild(warning);
+            return;
+        }
+
 
     const shuffledItems = [...items].sort(() => Math.random() - 0.5);
     const groups = Array.from({ length: numGroups }, () => []);
