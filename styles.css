@@ -1,8 +1,71 @@
 body {
   font-family: Arial, sans-serif;
   text-align: center;
-  background-color: #f4f4f4;
+  background-color:none;
+  background-image: url("vecteezy_gradient-digital-technology-background-network-connection_36340720.jpg");
   margin: 20px;
+}
+
+.heading{
+  width: 100%;
+  height:100px;
+  margin-top: 40px;
+  background-color:none;
+
+}
+.heading h1{
+  font-family:'Courier New', Courier, monospace;
+  font-size: 80px;
+  color: white;
+}
+.ws-heading {
+  width: 100%;
+  height:50px;
+  background-color:none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.ws-heading p{
+  font-size: 28px;
+  color: white;
+}
+
+.workspace{
+  width:100%;
+  background-color:none;
+  height:500px;
+  margin-top: 5%;
+}  
+
+.main-ws{
+  background-color:none;
+  width: 100%;
+  height: 60px;
+  color: rgb(189, 193, 210);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.custom-file-upload {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.custom-file-upload:hover {
+  transform: scale(1.10);
+}
+
+.labelcls{
+  color: white;
 }
 
 textarea {
@@ -23,7 +86,7 @@ textarea {
 .dropzone {
   width: 250px;
   min-height: 50px;
-  border: 2px dashed gray;
+  border: 8px inset rgb(86, 95, 4);
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -7,21 +7,32 @@
 </head>
 <body>
     <main id="main">
-        <h1>Groupify</h1>
-        <h2>Upload or Manually Enter Items</h2>
-        <form enctype="multipart/form-data" method="POST" action="/upload">
-            Upload CSV or TXT file:
-            <input id="upload" type="file" accept=".csv, .txt" name="files" />
-        </form>
+        <div class="heading">
+            <h1>Groupify</h1>
+        </div>
+        <div class="workspace">
+            <div class="ws-heading">
+                <p>Upload or Manually Enter Items</p>
+            </div>
+           <div class="main-ws">
+            <form enctype="multipart/form-data" method="POST" action="/upload">
+                Upload CSV or TXT file:
+                <input id="upload" class="custom-file-upload" type="file" accept=".csv, .txt" name="files" />
+            </form>
+           </div>
+    
+            <textarea class="form-control" rows="10" cols="50" id="upload_file" placeholder="Enter items here..."></textarea>
+            <div id="itemCount"></div>
+            <br><br>
+            <label for="teamSize" class="labelcls">Enter Team Size: </label>
+            <input type="number" id="teamSize" min="1" value="3">
+            <button type="button" onclick="initializeGroups()">Generate Teams</button>
+    
+            <div class="parent"></div>             
+           
+          
+        </div>
 
-        <textarea class="form-control" rows="10" cols="50" id="upload_file" placeholder="Enter items here..."></textarea>
-        <div id="itemCount"></div>
-        <br><br>
-        <label for="teamSize">Enter Team Size: </label>
-        <input type="number" id="teamSize" min="1" value="3">
-        <button type="button" onclick="initializeGroups()">Generate Teams</button>
-
-        <div class="parent"></div>
     </main>
     
     <script src="script.js"></script>
