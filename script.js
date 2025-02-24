@@ -71,6 +71,7 @@ function createDropzone(index) {
     const dropzone = document.createElement("div");
     dropzone.classList.add("dropzone"); 
     dropzone.textContent = `Team ${index + 1}`;
+    dropzone.textContent.contentEditable = true;
     dropzone.ondragover = onDragOver;
     dropzone.ondrop = onDrop;
     return dropzone;
