@@ -1,5 +1,5 @@
 body {
-  font-family: Papyrus, sans-serif;
+  font-family: Helvetica, sans-serif;
   text-align: center;
   background-color:none;
   background-image: url("vecteezy_gradient-digital-technology-background-network-connection_36340720.jpg");
@@ -16,7 +16,7 @@ body {
 
 }
 .heading h1{
-  font-family:'Courier New', Courier, monospace;
+  
   font-size: 80px;
   color: white;
 }
