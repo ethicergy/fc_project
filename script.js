@@ -29,8 +29,9 @@ function updateItemsFromTextArea() {
 }
 
 function displayNumberOfItems(items) {
-    const countdisplay = document.createElement("p");
+    var countdisplay = document.createElement("p");
     countdisplay.textContent = `Number of Items: ${items.length}`
+    countdisplay.classList.add("count")
     const maxSetter = document.getElementById("teamSize");
     maxSetter.setAttribute('max', items.length)
     document.getElementById("itemCount").innerHTML = '';
@@ -71,7 +72,6 @@ function createDropzone(index) {
     const dropzone = document.createElement("div");
     dropzone.classList.add("dropzone"); 
     dropzone.textContent = `Team ${index + 1}`;
-    dropzone.textContent.contentEditable = true;
     dropzone.ondragover = onDragOver;
     dropzone.ondrop = onDrop;
     return dropzone;
